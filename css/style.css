@@ -1,57 +1,142 @@
-/* Reset básico */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo do body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #2f2f2f; /* tom escuro do fundo */
-  color: #ffffff; /* texto branco */
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Título */
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+
+.titulo_principal {
+    font-size: 36px;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
-/* Campo de busca */
-input[type="text"] {
-  padding: 10px;
-  border: none;
-  border-radius: 5px 0 0 5px;
-  width: 250px;
-  font-size: 16px;
-  outline: none;
+
+
+form.busca {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-/* Botão de busca */
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  background-color: #4a4a4a;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+#searchInput {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
 }
 
-button:hover {
-  background-color: #5c5c5c;
+form.busca button {
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Rodapé / Créditos */
-footer {
-  margin-top: 30px;
-  font-size: 0.9em;
-  color: #cccccc;
+form.busca button:hover {
+    background-color: #666;
+}
+
+.resultado {
+    background: linear-gradient(145deg, #2f2f2f, #3a3a3a);
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), 0 4px 10px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resultado:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3), 0 6px 14px rgba(0, 0, 0, 0.8);
+}
+
+
+.resultado .titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temp, .vento {
+    width: 45%;
+}
+
+.tempTitulo, .ventoTiulo {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.tempInfo, .ventoInfo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.temp img {
+    width: 80px;   /* Aumentado de 50px para 80px */
+    height: 80px;
+}
+
+.ventoArea {
+    width: 50px;   /* Aumentado de 40px para 70px */
+    height: 50px;
+    border: 3px solid #fff;  /* Aumenta a espessura da borda proporcionalmente */
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.ventoPonto {
+    width: 4px;
+    height: 4px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: bottom center;
+}
+
+
+.aviso {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+body::after {
+    content: "Criado por Gustavo Portela";
+    font-size: 12px;
+    color: #999;
+    margin-top: 30px;
+    display: block;
 }
